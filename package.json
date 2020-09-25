@@ -9,5 +9,12 @@
   "scripts": {
     "start": "node build/index.js",
     "build": "tsc"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "inquirer": "^7.3.3"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^7.3.1"
   }
 }
