@@ -1,0 +1,13 @@
+{
+  "name": "springboard",
+  "version": "1.0.0",
+  "description": "Jumpstart your projects",
+  "main": "build/index.js",
+  "repository": "https://github.com/ishan-chhabra/springboard.git",
+  "author": "Ishan Chhabra <ishan.chhabra@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node build/index.js",
+    "build": "tsc"
+  }
+}
