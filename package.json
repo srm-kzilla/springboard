@@ -8,13 +8,17 @@
   "license": "MIT",
   "scripts": {
     "start": "node build/index.js",
-    "build": "tsc"
+    "build": "tsc && yarn copy",
+    "copy": "npx ncp ./src/templates ./build/templates"
   },
   "dependencies": {
     "chalk": "^4.1.0",
-    "inquirer": "^7.3.3"
+    "fs-extra": "^9.0.1",
+    "inquirer": "^7.3.3",
+    "ora": "^5.1.0"
   },
   "devDependencies": {
+    "@types/fs-extra": "^9.0.2",
     "@types/inquirer": "^7.3.1"
   }
 }

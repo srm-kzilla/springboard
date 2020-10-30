@@ -4,11 +4,12 @@
     "module": "commonjs",
     "declaration": true,
     "outDir": "./build",
-    "rootDir": "./src",
     "removeComments": true,
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
-  }
+  },
+  "exclude": ["./src/templates/**/*"],
+  "include": ["./src/**/*"]
 }
