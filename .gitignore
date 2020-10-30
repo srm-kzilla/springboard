@@ -3,4 +3,3 @@
 *.logs
 build
 node_modules
-templates
