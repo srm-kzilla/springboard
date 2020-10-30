@@ -8,12 +8,10 @@ export default function greet() {
 +-+-+-+-+-+-+-+-+-+-+-+`)
   );
   console.log(
-    chalk
-      .hex("#54a870")
-      .bold("Let springboard jumpstart your projects for you.\n")
+    chalk.hex("#54a870").bold("Springboard jumpstarts your projects for you.\n")
   );
   console.log(
     chalk.hex("#26baff")("crafted with ❤ by your friends on the SRMKZILLA team")
   );
-  console.log("\n\n");
+  console.log("\n");
 }

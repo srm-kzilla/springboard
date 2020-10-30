@@ -1,21 +1,9 @@
 import inquirer from "inquirer";
+import path from "path";
+import fse from "fs-extra";
+import generator, { Options } from "./generator";
 
 const questions: inquirer.QuestionCollection<any> = [
-  {
-    type: "list",
-    name: "package-manager",
-    message: "What package manager would you like to use?",
-    choices: [
-      {
-        name: "NPM (Node Package Manager)",
-        value: "npm",
-      },
-      {
-        name: "Yarn",
-        value: "yarn",
-      },
-    ],
-  },
   {
     type: "list",
     name: "architecture",
@@ -34,6 +22,57 @@ const questions: inquirer.QuestionCollection<any> = [
         value: "full-stack",
       },
     ],
+  },
+  {
+    type: "input",
+    name: "name",
+    message: "What's the name of your masterpiece?",
+    validate: (answer) => {
+      return /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,}$/.test(answer)
+        ? true
+        : "Please enter a valid project name.";
+    },
+  },
+  {
+    type: "input",
+    name: "author",
+    message: "What's the author's name?",
+  },
+  {
+    type: "input",
+    name: "license",
+    message: "What's the license for your package?",
+  },
+  {
+    type: "list",
+    name: "package-manager",
+    message: "What package manager would you like to use?",
+    choices: [
+      {
+        name: "NPM (Node Package Manager)",
+        value: "npm",
+      },
+      {
+        name: "Yarn",
+        value: "yarn",
+      },
+    ],
+  },
+  {
+    type: "list",
+    name: "git",
+    message: "Would you like to initialize a Git repository?",
+    choices: [
+      {
+        name: "Yes",
+        value: true,
+      },
+      {
+        name: "No",
+        value: false,
+      },
+    ],
+    when: () => !isGitRepo(),
   },
   {
     type: "list",
@@ -106,10 +145,6 @@ const questions: inquirer.QuestionCollection<any> = [
         name: "Styled Components",
         value: "styled-components",
       },
-      {
-        name: "Styled JSX",
-        value: "styled-jsx",
-      },
       new inquirer.Separator(),
       {
         name: "Tailwind CSS",
@@ -125,9 +160,9 @@ const questions: inquirer.QuestionCollection<any> = [
 export default function main() {
   inquirer
     .prompt(questions)
-    .then((answers) => {
-      // TODO: Generate template using answers
-      console.log(answers);
+    .then((answers: inquirer.Answers) => {
+      console.log("\n");
+      return generator(answers as Options);
     })
     .catch((error) => {
       if (error.isTtyError) {
@@ -135,3 +170,7 @@ export default function main() {
       }
     });
 }
+
+const isGitRepo: () => boolean = () => {
+  return fse.pathExistsSync(path.join(process.cwd(), ".git"));
+};
