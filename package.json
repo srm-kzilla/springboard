@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node build/index.js",
+    "postinstall": "yarn build",
     "build": "tsc && yarn copy",
     "copy": "npx ncp ./src/templates ./build/templates"
   },
