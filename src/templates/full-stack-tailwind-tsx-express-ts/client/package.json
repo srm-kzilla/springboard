@@ -27,8 +27,8 @@
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
     "build:css": "tailwindcss build src/tailwind.style.scss -o src/index.scss",
-    "prestart": "npm run build:tailwind",
-    "prebuild": "npm run build:tailwind"
+    "prestart": "npm run build:css",
+    "prebuild": "npm run build:css"
   },
   "eslintConfig": {
     "extends": [
