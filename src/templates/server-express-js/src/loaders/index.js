@@ -5,7 +5,7 @@ const Logger = require('./Logger');
 
 module.exports = async ({ expressApp }) => {
   await database();
-  Logger.info(`✌️ Connection to database successful: ${config.databaseURL}`);
+  Logger.info(`✌️ Connection to database successful`);
 
   await express({ app: expressApp });
   Logger.info('✌️ Express loaded');
