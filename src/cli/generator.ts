@@ -128,7 +128,7 @@ const getTemplate = (options: Options) => {
         if (options["server-express"]) {
           switch (options.styling) {
             case "bootstrap":
-              return null;
+              return "full-stack-bootstrap-express-ts";
             case "css":
               return "full-stack-css-express-ts";
             case "scss":
