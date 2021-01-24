@@ -130,11 +130,11 @@ const getTemplate = (options: Options) => {
             case "bootstrap":
               return null;
             case "css":
-              return null;
+              return "full-stack-css-express-ts";
             case "scss":
-              return null;
+              return "full-stack-scss-express-ts";
             case "styled-components":
-              return null;
+              return "full-stack-styled-components-express-ts";
             case "tailwind-css":
               return "full-stack-tailwind-tsx-express-ts";
             default:
