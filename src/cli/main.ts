@@ -76,8 +76,8 @@ const questions: inquirer.QuestionCollection<any> = [
   },
   {
     type: "list",
-    name: "server-ts",
-    message: "Would you like to add TypeScript to your Node.js?",
+    name: "ts",
+    message: "Would you like to add TypeScript to your project?",
     choices: [
       {
         name: "Yes",
@@ -88,7 +88,6 @@ const questions: inquirer.QuestionCollection<any> = [
         value: false,
       },
     ],
-    when: (answers) => ["server", "full-stack"].includes(answers.architecture),
   },
   {
     type: "list",
@@ -106,23 +105,6 @@ const questions: inquirer.QuestionCollection<any> = [
     ],
     when: (answers) => ["server", "full-stack"].includes(answers.architecture),
   },
-  {
-    type: "list",
-    name: "client-ts",
-    message: "Would you like to add TypeScript to your React client?",
-    choices: [
-      {
-        name: "Yes",
-        value: true,
-      },
-      {
-        name: "No",
-        value: false,
-      },
-    ],
-    when: (answers) => ["client", "full-stack"].includes(answers.architecture),
-  },
-
   {
     type: "list",
     name: "styling",
