@@ -143,15 +143,15 @@ const getTemplate = (options: Options) => {
         } else {
           switch (options.styling) {
             case "bootstrap":
-              return null;
+              return "full-stack-bootstrap-ts";
             case "css":
-              return null;
+              return "full-stack-css-ts";
             case "scss":
-              return null;
+              return "full-stack-scss-ts";
             case "styled-components":
-              return null;
+              return "full-stack-styled-components-ts";
             case "tailwind-css":
-              return null;
+              return "full-stack-tailwind-ts";
             default:
               return null;
           }
