@@ -145,7 +145,7 @@ const getTemplate = (options: Options) => {
             case "bootstrap":
               return null;
             case "css":
-              return null;
+              return "full-stack-css-ts";
             case "scss":
               return null;
             case "styled-components":
