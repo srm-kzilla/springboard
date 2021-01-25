@@ -166,7 +166,7 @@ const getTemplate = (options: Options) => {
             case "scss":
               return "full-stack-scss-express-js";
             case "styled-components":
-              return null;
+              return "full-stack-styled-components-express-js";
             case "tailwind-css":
               return "full-stack-tailwind-express-js";
             default:
