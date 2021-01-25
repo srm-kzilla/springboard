@@ -57,7 +57,7 @@ export default async function generator(options: Options) {
     );
 
     if (springboardScript) {
-      await execShellCommand(springboardScript, {
+      await execShellCommand(parseScript(springboardScript, options), {
         cwd: projectDir,
       });
     }
@@ -193,6 +193,14 @@ const getTemplate = (options: Options) => {
     default:
       return null;
   }
+};
+
+const parseScript = (script: string, options: Options) => {
+  const maps: Record<string, string> = {
+    PKG_MGR: options["package-manager"],
+  };
+  const re = /\{(.*?)\}/g;
+  return script.replace(re, (match) => maps[match.replace(/[{}]/g, "")]);
 };
 
 export const execShellCommand = (cmd: string, options: ExecOptions = {}) => {
