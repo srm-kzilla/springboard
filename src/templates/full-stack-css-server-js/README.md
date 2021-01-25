@@ -3,9 +3,7 @@
 </div>
 
 <div align="center">
-  <img alt="react" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" height="60" />
-  <img style="margin-right: 16px;" alt="typescript" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" height="60" />
-  <img alt="sass" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg" height="60" />
+  <img style="margin-right: 16px;" alt="logo" src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" height="60" />
 </div>
 
 <br>
@@ -21,17 +19,9 @@ crafted with <span style="color: #DE6C5E;">&hearts;</span> by your friends on th
 
 > Star the [repo](https://github.com/srm-kzilla/springboard). Show the love. ❣
 
-## Preview 📺
-
-<div align="center">
-  <img alt="Screenshot" src="docs/cover.png" />
-</div>
-
 ## Built With 🚀
 
-- [React](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [SCSS](https://sass-lang.com/)
+- [Node.js](https://nodejs.org/)
 
 ## Installation 🔧
 
