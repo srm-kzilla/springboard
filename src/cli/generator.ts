@@ -243,11 +243,24 @@ const offerVSCode = async (cwd: string) => {
     },
   ];
 
+  var isCodeAvailable = false;
   try {
     await execShellCommand("code --version");
+    isCodeAvailable = true;
     const { vscode } = await inquirer.prompt(questions);
     if (vscode) {
       execShellCommand("code .", { cwd });
     }
   } catch (_) {}
+
+  if (!isCodeAvailable) {
+    try {
+      await execShellCommand("code-exploration --version");
+      isCodeAvailable = true;
+      const { vscode } = await inquirer.prompt(questions);
+      if (vscode) {
+        execShellCommand("code-exploration .", { cwd });
+      }
+    } catch (_) {}
+  }
 };
