@@ -183,7 +183,7 @@ const getTemplate = (options: Options) => {
             case "styled-components":
               return null;
             case "tailwind-css":
-              return null;
+              return "full-stack-tailwind-server-js";
             default:
               return null;
           }
