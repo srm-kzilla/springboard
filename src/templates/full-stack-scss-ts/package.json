@@ -8,7 +8,7 @@
     "lint": "eslint . --ext .ts",
     "build": "tsc",
     "dev": "tsc-watch --onSuccess 'node ./build/index.js'",
-    "springboard": "cd client && yarn"
+    "springboard": "cd client && {{PKG_MGR}} install"
   },
   "devDependencies": {
     "eslint": "^7.12.1"
