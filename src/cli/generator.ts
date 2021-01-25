@@ -12,9 +12,8 @@ export interface Options {
   "package-manager": "yarn" | "npm";
   git: boolean;
   architecture: "server" | "client" | "full-stack";
-  "server-ts": boolean;
+  ts: boolean;
   "server-express": boolean;
-  "client-ts": boolean;
   styling: "css" | "scss" | "bootstrap" | "styled-components" | "tailwind-css";
 }
 
@@ -58,7 +57,7 @@ export default async function generator(options: Options) {
     );
 
     if (springboardScript) {
-      await execShellCommand(springboardScript, {
+      await execShellCommand(parseScript(springboardScript, options), {
         cwd: projectDir,
       });
     }
@@ -86,13 +85,13 @@ export default async function generator(options: Options) {
 const getTemplate = (options: Options) => {
   switch (options.architecture) {
     case "server":
-      if (options["server-ts"]) {
+      if (options["ts"]) {
         return options["server-express"] ? "server-express-ts" : "server-ts";
       } else {
         return options["server-express"] ? "server-express-js" : "server-js";
       }
     case "client":
-      if (options["client-ts"]) {
+      if (options["ts"]) {
         switch (options.styling) {
           case "bootstrap":
             return "client-bootstrap-ts";
@@ -104,6 +103,8 @@ const getTemplate = (options: Options) => {
             return "client-styled-components-ts";
           case "tailwind-css":
             return "client-tailwind-ts";
+          default:
+            return null;
         }
       } else {
         switch (options.styling) {
@@ -117,21 +118,89 @@ const getTemplate = (options: Options) => {
             return "client-styled-components-js";
           case "tailwind-css":
             return "client-tailwind-js";
+          default:
+            return null;
         }
       }
 
     case "full-stack":
-      if (
-        options["server-ts"] &&
-        options["server-express"] &&
-        options["client-ts"] &&
-        options.styling === "tailwind-css"
-      )
-        return "full-stack-tailwind-tsx-express-ts";
+      if (options["ts"]) {
+        if (options["server-express"]) {
+          switch (options.styling) {
+            case "bootstrap":
+              return "full-stack-bootstrap-express-ts";
+            case "css":
+              return "full-stack-css-express-ts";
+            case "scss":
+              return "full-stack-scss-express-ts";
+            case "styled-components":
+              return "full-stack-styled-components-express-ts";
+            case "tailwind-css":
+              return "full-stack-tailwind-tsx-express-ts";
+            default:
+              return null;
+          }
+        } else {
+          switch (options.styling) {
+            case "bootstrap":
+              return "full-stack-bootstrap-ts";
+            case "css":
+              return "full-stack-css-ts";
+            case "scss":
+              return "full-stack-scss-ts";
+            case "styled-components":
+              return "full-stack-styled-components-ts";
+            case "tailwind-css":
+              return "full-stack-tailwind-ts";
+            default:
+              return null;
+          }
+        }
+      } else {
+        if (options["server-express"]) {
+          switch (options.styling) {
+            case "bootstrap":
+              return "full-stack-bootstrap-express-js";
+            case "css":
+              return "full-stack-css-express-js";
+            case "scss":
+              return "full-stack-scss-express-js";
+            case "styled-components":
+              return "full-stack-styled-components-express-js";
+            case "tailwind-css":
+              return "full-stack-tailwind-express-js";
+            default:
+              return null;
+          }
+        } else {
+          switch (options.styling) {
+            case "bootstrap":
+              return "full-stack-bootstrap-server-js";
+            case "css":
+              return "full-stack-css-server-js";
+            case "scss":
+              return "full-stack-scss-server-js";
+            case "styled-components":
+              return "full-stack-styled-components-server-js";
+            case "tailwind-css":
+              return "full-stack-tailwind-server-js";
+            default:
+              return null;
+          }
+        }
+      }
 
     default:
       return null;
   }
+};
+
+const parseScript = (script: string, options: Options) => {
+  const maps: Record<string, string> = {
+    PKG_MGR: options["package-manager"],
+  };
+  const re = /\{(.*?)\}/g;
+  return script.replace(re, (match) => maps[match.replace(/[{}]/g, "")]);
 };
 
 export const execShellCommand = (cmd: string, options: ExecOptions = {}) => {
