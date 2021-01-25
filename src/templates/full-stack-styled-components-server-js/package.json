@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/index.js",
     "lint": "eslint . --ext .js",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "springboard":"cd client && {{PKG_MGR}} install"
   },
   "devDependencies": {
     "eslint": "^7.12.1"

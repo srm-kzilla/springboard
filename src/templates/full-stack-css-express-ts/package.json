@@ -6,7 +6,7 @@
     "build": "tsc",
     "lint": "eslint . --ext .ts",
     "dev": "tsc-watch --onSuccess 'node ./build/index.js'",
-    "springboard": "cd client && yarn"
+    "springboard": "cd client && {{PKG_MGR}} install"
   },
   "devDependencies": {
     "@types/express": "^4.17.8",
