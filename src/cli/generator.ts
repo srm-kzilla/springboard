@@ -162,7 +162,7 @@ const getTemplate = (options: Options) => {
             case "bootstrap":
               return "full-stack-bootstrap-express-js";
             case "css":
-              return null;
+              return "full-stack-css-express-js";
             case "scss":
               return null;
             case "styled-components":
