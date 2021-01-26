@@ -1,6 +1,6 @@
 {
   "name": "@srmkzilla/springboard",
-  "version": "1.0.0",
+  "version": "0.0.1-alpha",
   "description": "Jumpstart your projects",
   "main": "build/index.js",
   "repository": "https://github.com/srm-kzilla/springboard.git",
