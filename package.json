@@ -1,6 +1,6 @@
 {
   "name": "@srmkzilla/springboard",
-  "version": "0.0.1-alpha",
+  "version": "0.0.1-alpha.2",
   "description": "Jumpstart your projects",
   "main": "build/index.js",
   "repository": "https://github.com/srm-kzilla/springboard.git",
@@ -8,9 +8,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node build/index.js",
-    "postinstall": "npm i && npx tsc && npx ncp ./src/templates ./build/templates",
-    "build": "tsc && yarn copy",
-    "copy": "npx ncp ./src/templates ./build/templates"
+    "build": "tsc",
+    "prepublish": "npx ncp ./src/templates ./build/templates"
   },
   "bin": {
     "springboard": "./build/index.js"
