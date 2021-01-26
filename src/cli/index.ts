@@ -1,5 +1,5 @@
 import generator from "./generator";
-import greet from "./greet";
+import greet, { showVersion } from "./greet";
 import main from "./main";
 
-export { greet, main, generator };
+export { greet, main, generator, showVersion };
