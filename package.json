@@ -1,16 +1,19 @@
 {
-  "name": "springboard",
+  "name": "@srmkzilla/springboard",
   "version": "1.0.0",
   "description": "Jumpstart your projects",
   "main": "build/index.js",
-  "repository": "https://github.com/ishan-chhabra/springboard.git",
-  "author": "Ishan Chhabra <ishan.chhabra@hotmail.com>",
+  "repository": "https://github.com/srm-kzilla/springboard.git",
+  "author": "SRMKZILLA <technical@srmkzilla.net>",
   "license": "MIT",
   "scripts": {
     "start": "node build/index.js",
-    "postinstall": "yarn build",
+    "postinstall": "npm i && npx tsc && npx ncp ./src/templates ./build/templates",
     "build": "tsc && yarn copy",
     "copy": "npx ncp ./src/templates ./build/templates"
+  },
+  "bin": {
+    "springboard": "./build/index.js"
   },
   "dependencies": {
     "chalk": "^4.1.0",
