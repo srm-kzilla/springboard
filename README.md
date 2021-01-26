@@ -7,18 +7,19 @@
 
 <br>
 <p align="center">
-Boilerplate Generator. 🧫
+Jumpstart your projects in record time. 🚀
 </p>
 <p align="center">
 crafted with <span style="color: #8b0000;">&hearts;</span> by your friends on the <a href="https://srmkzilla.net">SRMKZILLA</a> team.
 </p>
 <p align="center">
-    <img src="https://img.shields.io/badge/version-1.0.0-yellowgreen" alt="version 1.0.0"/>
+    <img src="https://img.shields.io/badge/version-1.1.0-yellowgreen" alt="version 1.1.0"/>
     <img src="https://img.shields.io/badge/license-MIT-brightgreen" alt="license MIT"/>
     <img src="https://img.shields.io/badge/author-SRMKZILLA-orange" alt="author SRMKZILLA"/>
 </p>
 
-> A simple boilerplate generator to boil down your project creation time. ⏰
+> Meet Springboard. A simple boilerplate generator that boils down project setup time to mere seconds<i>\*</i>. 🚀  
+> _\* No conditions here. Seriously._
 
 ## Preview 📺
 
@@ -40,6 +41,10 @@ Start the CLI
 $ yarn start
 ```
 
+## Inside the box 📦
+
+Wondering what `Springboard` can do? Here's a neat [wiki](https://github.com/srm-kzilla/springboard/wiki/Inside-the-box) to get you onboard!
+
 ## License 📜
 
 `Springboard` is available under the MIT license. See the LICENSE file for more info.
@@ -50,9 +55,8 @@ Please read `Contributing.md` for details on our code of conduct, and the proces
 
 ## Shout outs 💥
 
-| <p align="center">![Ishan Chhabra](https://github.com/ishan-chhabra.png?size=128)<br>[Ishan Chhabra](https://ishanchhabra.com)</p>| <p align="center">![Aniruddha Chatterjee](https://github.com/ruddha2001.png?size=128)<br>[Aniruddha Chatterjee](https://github.com/ruddha2001)</p>|
-| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-
+| <p align="center">![Ishan Chhabra](https://github.com/ishan-chhabra.png?size=128)<br>[Ishan Chhabra](https://ishanchhabra.com)</p> | <p align="center">![Aniruddha Chatterjee](https://github.com/ruddha2001.png?size=128)<br>[Aniruddha Chatterjee](https://github.com/ruddha2001)</p> |
+| ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 ## Forking this repo 🚨
 
