@@ -1,5 +1,4 @@
 import chalk from "chalk";
-import { version } from "../../package.json";
 
 export default function greet() {
   console.log(
@@ -19,7 +18,7 @@ export default function greet() {
 }
 
 export const getVersion = () => {
-  return version;
+  return "1.1.1";
 };
 
 export const showVersion = () => {
