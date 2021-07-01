@@ -1,4 +1,4 @@
-const bodyParser = require('body-parser');
+const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const config = require('../config');
@@ -32,7 +32,7 @@ module.exports = ({ app }) => {
   app.use(cors());
 
   // Middleware that transforms the raw string of req.body into json
-  app.use(bodyParser.json());
+  app.use(express.json());
 
   // Load API routes
   app.use(config.api.prefix, routes());
